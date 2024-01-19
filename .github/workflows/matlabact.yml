@@ -24,3 +24,7 @@ jobs:
         with:
           name: cc
           path: code-coverage/coverage.xml 
+          name: tr
+          path: test-results/results.xml
+          
+          
