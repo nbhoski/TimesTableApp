@@ -35,7 +35,7 @@ classdef tAnswerIsCorrect < matlab.unittest.TestCase
         end
         
         function verifyNonNumericAnswer(testCase)
-            testCase.verifyFalse( testCase.gameObject.isAnswerCorrect("1") );
+            testCase.verifyFalse( testCase.gameObject.isAnswerCorrect(1) );
         end
     end
     
