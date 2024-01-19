@@ -24,6 +24,8 @@ jobs:
         with:
           name: cc
           path: code-coverage/coverage.xml 
+      - uses: actions/upload-artifact@v2
+        with:          
           name: tr
           path: test-results/results.xml
           
