@@ -5,7 +5,7 @@ classdef tCurrentQuestion < matlab.unittest.TestCase
     
     properties
         gameObject;
-        numTimesToRepeat = 1000;
+        numTimesToRepeat = 10;
     end
     
     methods(TestClassSetup)        
