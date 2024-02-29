@@ -1,5 +1,7 @@
 function plan = buildfile
 
+import matlab.buildtool.tasks.CodeIssuesTask
+
 % Add the source folder to the path
 addpath("source");
 
