@@ -16,7 +16,12 @@ jobs:
       - name: Run build
         uses: matlab-actions/run-build@v2
         with:
-          tasks: check test deploy       
+          tasks: check test   
+      - uses: actions/upload-artifact@v4
+        with:          
+          name: app
+          path: *standalone*/timestable*
+          
       # - name: Run tests and generate artifacts
       #   uses: matlab-actions/run-tests@v1
       #   with:
@@ -31,5 +36,3 @@ jobs:
       #   with:          
       #     name: tr
       #     path: test-results/results.xml
-      # 
-      # 
