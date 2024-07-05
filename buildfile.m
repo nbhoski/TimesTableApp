@@ -1,5 +1,6 @@
 function plan = buildfile
 
+import matlab.buildtool.Task
 import matlab.buildtool.tasks.CodeIssuesTask
 
 % Add the source folder to the path
@@ -13,7 +14,14 @@ plan("test") = matlab.buildtool.tasks.TestTask("tests");
 
 plan("check") = CodeIssuesTask;
 
+plan("deploy").Dependencies = ["check" "test"];
+
 % Make the "test" task the default task in the plan
 plan.DefaultTasks = "check";
 
+end
+
+function deployTask(~)
+% Deploy standalone application
+compiler.build.standaloneApplication('source/timestable.mlapp');
 end
