@@ -1,4 +1,4 @@
-name: Run MATLAB Build on GitHub-Hosted Runner  
+name: Run MATLAB Build on GitHub-Hosted Runner 
 on: 
   workflow_dispatch
 jobs:
@@ -17,10 +17,11 @@ jobs:
         uses: matlab-actions/run-build@v2
         with:
           tasks: check test   
-      # - uses: actions/upload-artifact@v4
-      #   with:          
-      #     name: app
-      #     path: *standalone*/timestable*
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4  
+        with:          
+          name: app
+          path: *standalone*/timestable*
           
       # - name: Run tests and generate artifacts
       #   uses: matlab-actions/run-tests@v1
