@@ -1,6 +1,8 @@
 name: Run MATLAB Build on GitHub-Hosted Runner 
 on: 
   workflow_dispatch
+env:
+  MLM_LICENSE_TOKEN: ${{ secrets.LICTOKEN }}
 jobs:
   my-job:
     name: Run MATLAB Tests and Generate Artifacts
