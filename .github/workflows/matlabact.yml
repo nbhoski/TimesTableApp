@@ -6,7 +6,10 @@ env:
 jobs:
   my-job:
     name: Run MATLAB Tests and Generate Artifacts
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]    
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -22,7 +25,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4  
         with:          
-          name: app
+          name: app-${{ matrix.os }}
           path: ./*standalone*/*timestable*
           
       # - name: Run tests and generate artifacts
