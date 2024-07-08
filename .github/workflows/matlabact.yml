@@ -19,7 +19,7 @@ jobs:
           products: MATLAB_Compiler         
           release: R2024a
       - name: Run build
-        uses: matlab-actions/run-build@v2
+        uses: matlab-actions/run-build@main
         with:
           tasks: check test deploy  
       - name: Upload artifact
